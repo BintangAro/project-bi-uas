@@ -1,0 +1,21 @@
+channel_key,nama_channel,tipe,platform,metode_transaksi
+C001,Website,Offline,App,Kartu Kredit
+C002,Marketplace,Online,Web,E-Wallet
+C003,Toko Offline,Hybrid,Web,Transfer Bank
+C004,Mobile App,Hybrid,Web,E-Wallet
+C005,WhatsApp,Offline,Toko Fisik,E-Wallet
+C006,Instagram,Hybrid,App,Kartu Kredit
+C007,TikTok Shop,Online,Toko Fisik,Transfer Bank
+C008,Shopee,Hybrid,Marketplace,Kartu Kredit
+C009,Tokopedia,Hybrid,Marketplace,E-Wallet
+C010,Lazada,Offline,App,COD
+C011,Bukalapak,Hybrid,App,E-Wallet
+C012,Facebook Shop,Online,App,Transfer Bank
+C013,Call Center,Online,Marketplace,COD
+C014,Email,Online,App,COD
+C015,Katalog,Online,App,Transfer Bank
+C016,Reseller,Offline,App,Transfer Bank
+C017,E-Commerce App,Online,Web,COD
+C018,YouTube,Offline,Web,COD
+C019,Chatbot,Hybrid,App,COD
+C020,LinkedIn,Online,App,Kartu Kredit

@@ -1,0 +1,38 @@
+id_region,nama_wilayah,kota,provinsi,tipe_region,jumlah_penduduk
+R001,Aceh - Banda Aceh,Banda Aceh,Aceh,Perkotaan,4198556
+R002,Sumatera Utara - Medan,Medan,Sumatera Utara,Perkotaan,5683886
+R003,Sumatera Barat - Padang,Padang,Sumatera Barat,Perkotaan,6286274
+R004,Riau - Pekanbaru,Pekanbaru,Riau,Perkotaan,8176105
+R005,Kepulauan Riau - Batam,Batam,Kepulauan Riau,Perkotaan,4970111
+R006,Jambi - Jambi,Jambi,Jambi,Perkotaan,313136
+R007,Bengkulu - Bengkulu,Bengkulu,Bengkulu,Perkotaan,7481240
+R008,Sumatera Selatan - Palembang,Palembang,Sumatera Selatan,Perkotaan,5074110
+R009,Lampung - Bandar Lampung,Bandar Lampung,Lampung,Perkotaan,5867569
+R010,Bangka Belitung - Pangkal Pinang,Pangkal Pinang,Bangka Belitung,Perkotaan,5692409
+R011,DKI Jakarta - Jakarta,Jakarta,DKI Jakarta,Perkotaan,9499031
+R012,Jawa Barat - Bandung,Bandung,Jawa Barat,Perkotaan,1680243
+R013,Jawa Tengah - Semarang,Semarang,Jawa Tengah,Perkotaan,9302969
+R014,DI Yogyakarta - Yogyakarta,Yogyakarta,DI Yogyakarta,Perkotaan,4373386
+R015,Jawa Timur - Surabaya,Surabaya,Jawa Timur,Perkotaan,3332616
+R016,Banten - Serang,Serang,Banten,Perkotaan,3142714
+R017,Bali - Denpasar,Denpasar,Bali,Perkotaan,3877036
+R018,Nusa Tenggara Barat - Mataram,Mataram,Nusa Tenggara Barat,Perkotaan,7886323
+R019,Nusa Tenggara Timur - Kupang,Kupang,Nusa Tenggara Timur,Perkotaan,6762116
+R020,Kalimantan Barat - Pontianak,Pontianak,Kalimantan Barat,Perkotaan,6700981
+R021,Kalimantan Tengah - Palangkaraya,Palangkaraya,Kalimantan Tengah,Perkotaan,7634054
+R022,Kalimantan Selatan - Banjarmasin,Banjarmasin,Kalimantan Selatan,Perkotaan,2230019
+R023,Kalimantan Timur - Samarinda,Samarinda,Kalimantan Timur,Perkotaan,4757944
+R024,Kalimantan Utara - Tanjung Selor,Tanjung Selor,Kalimantan Utara,Pedesaan,1284704
+R025,Sulawesi Utara - Manado,Manado,Sulawesi Utara,Perkotaan,4407558
+R026,Sulawesi Tengah - Palu,Palu,Sulawesi Tengah,Perkotaan,2361334
+R027,Sulawesi Selatan - Makassar,Makassar,Sulawesi Selatan,Perkotaan,8157504
+R028,Sulawesi Tenggara - Kendari,Kendari,Sulawesi Tenggara,Perkotaan,4333439
+R029,Gorontalo - Gorontalo,Gorontalo,Gorontalo,Perkotaan,328071
+R030,Maluku - Ambon,Ambon,Maluku,Perkotaan,9949663
+R031,Maluku Utara - Ternate,Ternate,Maluku Utara,Perkotaan,7898877
+R032,Papua - Jayapura,Jayapura,Papua,Perkotaan,1968791
+R033,Papua Barat - Manokwari,Manokwari,Papua Barat,Perkotaan,9062533
+R034,Papua Selatan - Merauke,Merauke,Papua Selatan,Perkotaan,7216815
+R035,Papua Tengah - Nabire,Nabire,Papua Tengah,Pedesaan,5849032
+R036,Papua Pegunungan - Wamena,Wamena,Papua Pegunungan,Pedesaan,2601270
+R037,Papua Barat Daya - Sorong,Sorong,Papua Barat Daya,Perkotaan,8900109
