@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard Penjualan & Model 5G</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>📈 Total Penjualan per Wilayah</h1>
+    <canvas id="wilayahChart" width="400" height="200"></canvas>
+
+    <h1>📱 Total Penjualan Model 5G</h1>
+    <canvas id="modelChart" width="400" height="200"></canvas>
+
+    <h1>🌍 Kontribusi Wilayah (%)</h1>
+    <canvas id="kontribusiChart" width="400" height="200"></canvas>
+
+    <script>
+        // Grafik Penjualan Wilayah
+        const ctx1 = document.getElementById('wilayahChart').getContext('2d');
+        new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: {{ wilayah_labels|safe }},
+                datasets: [{
+                    label: 'Total Penjualan per Wilayah (Rp)',
+                    data: {{ wilayah_values|safe }},
+                    backgroundColor: 'rgba(255, 99, 132, 0.7)'
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: { y: { beginAtZero: true } }
+            }
+        });
+
+        // Grafik Model 5G
+        const ctx2 = document.getElementById('modelChart').getContext('2d');
+        new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: {{ model_labels|safe }},
+                datasets: [{
+                    label: 'Total Penjualan Model 5G (Rp)',
+                    data: {{ model_values|safe }},
+                    backgroundColor: 'rgba(54, 162, 235, 0.7)'
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: { y: { beginAtZero: true } }
+            }
+        });
+
+        // Grafik Kontribusi Wilayah
+        const ctx3 = document.getElementById('kontribusiChart').getContext('2d');
+        new Chart(ctx3, {
+            type: 'pie',
+            data: {
+                labels: {{ kontribusi_labels|safe }},
+                datasets: [{
+                    label: 'Kontribusi Wilayah (%)',
+                    data: {{ kontribusi_values|safe }},
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.7)',
+                        'rgba(54, 162, 235, 0.7)',
+                        'rgba(255, 206, 86, 0.7)',
+                        'rgba(75, 192, 192, 0.7)',
+                        'rgba(153, 102, 255, 0.7)',
+                        'rgba(255, 159, 64, 0.7)'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+    </script>
+</body>
+</html>
+

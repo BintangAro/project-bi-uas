@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard Analisis Penjualan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Custom CSS -->
+  <style>
+    body {
+      background-color: #f4f6f8;
+      padding: 40px 20px;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .dashboard-container {
+      max-width: 1200px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #333;
+    }
+    .chart-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+    .chart-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #444;
+    }
+    canvas {
+      max-height: 300px;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard-container">
+    <h1>Dashboard Analisis Penjualan Samsung</h1>
+
+    <form method="get" class="row g-3 mb-4">
+      <div class="col-md-6">
+        <label class="form-label">Wilayah:</label>
+        <select name="region" class="form-select">
+          {% for region in region_options %}
+            <option value="{{ region }}" {% if region == selected_region %}selected{% endif %}>{{ region }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">Tahun:</label>
+        <select name="tahun" class="form-select">
+          {% for tahun in tahun_options %}
+            <option value="{{ tahun }}" {% if tahun == selected_year %}selected{% endif %}>{{ tahun }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="col-md-2 align-self-end">
+        <button type="submit" class="btn btn-primary w-100">Tampilkan</button>
+      </div>
+    </form>
+
+    <div class="row g-4">
+      <!-- Grafik Penjualan -->
+      <div class="col-md-6">
+        <div class="chart-card">
+          <div class="chart-title">Jumlah Penjualan Produk</div>
+          <canvas id="penjualanChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Grafik Revenue 5G -->
+      <div class="col-md-6">
+        <div class="chart-card">
+          <div class="chart-title">Revenue Produk 5G Tertinggi</div>
+          <canvas id="revenueChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Grafik Kontribusi Channel -->
+      <div class="col-md-12">
+        <div class="chart-card">
+          <div class="chart-title">Kontribusi Penjualan per WilayahS</div>
+          <canvas id="kontribusiChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chart Scripts -->
+  <script>
+    // Penjualan Chart
+  new Chart(document.getElementById('penjualanChart'), {
+    type: 'bar',
+    data: {
+      labels: {{ chart_penjualan.labels|default:"[]"|safe }},
+      datasets: [{
+        label: 'Qty Terjual',
+        backgroundColor: 'rgba(54, 162, 235, 0.7)',
+        data: {{ chart_penjualan.actual|default:"[]"|safe }}
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { position: 'top' } },
+      scales: {
+        x: { ticks: { autoSkip: false, maxRotation: 45, minRotation: 30 } },
+        y: { beginAtZero: true }
+      }
+    }
+  });
+
+  // Revenue Produk 5G Chart (horizontal bar chart)
+  new Chart(document.getElementById('revenueChart'), {
+    type: 'bar',
+    data: {
+      labels: {{ chart_revenue.labels|default:"[]"|safe }},
+      datasets: [{
+        label: 'Revenue Bersih Produk 5G',
+        backgroundColor: 'rgba(255, 159, 64, 0.7)',
+        data: {{ chart_revenue.revenue|default:"[]"|safe }}
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      plugins: { legend: { position: 'top' } },
+      scales: {
+        x: { beginAtZero: true }
+      }
+    }
+  });
+
+  // Kontribusi Wilayah Chart (pie)
+  new Chart(document.getElementById('kontribusiChart'), {
+    type: 'pie',
+    data: {
+      labels: {{ chart_kontribusi.labels|default:"[]"|safe }},
+      datasets: [{
+        label: 'Total Qty per Wilayah',
+        data: {{ chart_kontribusi.qty|default:"[]"|safe }},
+        backgroundColor: [
+          '#007bff', '#6610f2', '#6f42c1',
+          '#e83e8c', '#fd7e14', '#ffc107',
+          '#28a745', '#20c997'
+        ]
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { position: 'right' } }
+    }
+  });
+  </script>
+</body>
+</html>
