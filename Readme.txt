@@ -1,6 +1,11 @@
-# Project UAS Business Intelligence - SI UNESA
+Project UAS Business Intelligence - SI UNESA
 
 Repositori ini merupakan hasil proyek UAS mata kuliah Business Intelligence oleh mahasiswa Sistem Informasi Universitas Negeri Surabaya.
+Anggota Kelompok :
+1. Nurus Safa’ah (23051214290)
+2. Yovita Aurela Frinanda (23051214295)
+3. Bintang Arrorihim (23051214301)
+4. Fira Yulia Salsabillah (23051214321)
 
 A. Struktur Proyek
 - `airflow_etl/dags/` → Pipeline ETL dengan Airflow untuk 3 Star Schema
